@@ -1,0 +1,6 @@
+model {
+    String name
+}
+
+i(class: "bi bi-" + name) {
+}

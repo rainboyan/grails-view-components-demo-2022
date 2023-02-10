@@ -1,0 +1,12 @@
+model {
+    String name
+    String type
+    String size
+    String cssClasses
+    String color
+    String state
+}
+
+button([type: type, class: 'btn ' + (cssClasses ? cssClasses : 'btn-info') + (size ? ' btn-' + size : '')] + (state == 'disabled' ? [disabled: ''] : [:]) + (color ? [style: 'color: ' + color] : [:])) {
+    yield name
+}
