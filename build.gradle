@@ -6,6 +6,7 @@ buildscript {
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
+        classpath "org.grails.plugins:views-gradle:$grailsViewsVersion"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:4.0.0"
     }
 }
@@ -18,6 +19,7 @@ apply plugin:"idea"
 apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"org.grails.grails-gsp"
+apply plugin: "org.grails.plugins.views-component"
 apply plugin:"com.bertramlabs.asset-pipeline"
 
 repositories {
@@ -59,6 +61,7 @@ dependencies {
     implementation "org.grails:grails-plugin-rest"
     implementation "org.springframework.boot:spring-boot-starter-validation"
     implementation "org.grails.plugins:gsp"
+    implementation "org.grails.plugins:views-component:$grailsViewsVersion"
     profile "org.grails.profiles:web-clean:2022.0.0-SNAPSHOT"
     runtimeOnly "org.glassfish.web:el-impl:2.2.1-b05"
     runtimeOnly "org.apache.tomcat:tomcat-jdbc"
